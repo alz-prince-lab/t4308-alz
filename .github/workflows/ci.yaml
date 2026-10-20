@@ -10,6 +10,8 @@ jobs:
   validate_and_plan:
     uses: alz-prince-lab/t4308-alz-templates/.github/workflows/ci-template.yaml@main
     name: 'CI'
+    with:
+      governance-test: true
     permissions:
       id-token: write
       contents: read
