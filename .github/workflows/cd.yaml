@@ -18,6 +18,10 @@ on:
         description: 'Run Steps: Governance - Sandbox'
         type: boolean
         default: true
+      governance-test:
+        description: 'Run Steps: Governance - Test sibling'
+        type: boolean
+        default: true
 
 jobs:
   plan_and_apply:
@@ -30,3 +34,4 @@ jobs:
       skip_what_if: ${{ github.event_name != 'workflow_dispatch' && false || inputs.skip_what_if == true }}
       governance-int-root: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-int-root == true }}
       governance-sandbox: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-sandbox == true }}
+      governance-test: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-test == true }}
